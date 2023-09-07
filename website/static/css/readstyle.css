@@ -1,0 +1,61 @@
+.news-body{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.title{
+    margin-top: 1rem;
+}
+.title span{
+  
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18pt;
+    font-weight: bold;
+
+}
+.detail span{
+    margin-top: 1.5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.imagecontainer
+{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagecontainer img{
+    width: 100%;
+    height: 450px;
+}
+.para{
+    margin-top: 1rem;
+}
+
+.para p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14pt;
+    text-align: justify;
+}
+
+.youtube{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@media (max-width: 768px) {
+
+    .imagecontainer img{
+        width: 100%;
+        height: 400px;
+    }
+}

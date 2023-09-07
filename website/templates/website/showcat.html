@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet%}
+{% endblock %}
+{% block content %}
+<div class="card-holder">
+    {% for item in page %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{item.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            <!-- <h2 class="card-title">Sport</h2> -->
+            <p class="card-description">{{item.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'read' item.id%}""><button>Read more -></button></a>
+        </div>
+    </div>
+    {% endfor %}
+   
+</div>
+
+{%comment%}
+<div class="pagination">
+    {% if page.has_previous %}
+    <a href="?page={{ page.previous_page_number }}" class="page-link"><<</a>
+    {% endif %}
+    {% for num_page in page.paginator.page_range %}
+    <br>
+    {% if page.number == num_page %}
+    <a href="?page={{ num_page }}" class="page-link actiave">{{num_page}}</a>
+    {% else %}
+        <a href="?page={{ num_page }}" class="page-link">{{num_page}}</a>
+    {%endif%}
+    <br>
+    {%endfor%}
+    <a href="?page={{ num_page }}" class="page-link">&#8943;</a>
+    {% if page.has_next %}
+    <a href="?page={{ page.next_page_number }}" class="page-link">>></a>
+    {% endif %}
+   
+    <!-- Add more page links as needed -->
+  </div>
+  {%endcomment%}
+
+  <div class="pagination">
+    {% if page.has_previous %}
+    <a href="?page={{ page.previous_page_number }}" class="page-link"><<</a>
+    {% endif %}
+    {% if page.has_next %}
+    <a href="?page={{ page.next_page_number }}" class="page-link">>></a>
+    {% endif %}
+   
+
+
+</div>
+
+    {% block footer %}
+    {% endblock %}
+    
+    {% endblock %}

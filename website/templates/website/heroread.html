@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load static %}
+{% block stylesheet%}
+<link rel="stylesheet" href="{% static 'css/readstyle.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="news-body">
+    {% for item in hreaddata %}
+    <div class="newsinfo">
+        <div class="title"> <span>{{item.headding}}</span></div>
+        <div class="detail"><span>{{item.author}}</span>
+            <span>{{item.date}}</span>
+        </div>
+
+
+    </div>
+
+    <div class = "youtube">
+        {% video item.youtube '100% x 450px'  %}
+    </div>
+  
+    <div class="imagecontainer">
+        
+        <img src="/media/{{item.img}}" alt="" srcset="">
+    </div>
+    <div class="para">
+        <p>{{item.para1}}</p>
+        <p>
+            {{item.para2}}
+        </p>
+    </div>
+{%endfor%}
+</div>
+
+{% block footer %}
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet%}
+
+{% endblock %}
+{% block content %}
+
+{%if heorsection%}
+<div class="hero" style="background-image:  url('/media/{{heorsection.img}}');">
+    <div class="hero-content">
+        <p>{{heorsection.headding}}</p>
+        <a href="{%url 'hread' heorsection.id%}"><button class="heor-readmore">Read more &#8680;</button></a>
+ 
+    </div>
+</div>
+{%endif%}
+
+<div class="sectiondetail">
+    <h2>Categories</h2>
+    <div class="line"></div>
+</div>
+
+<div class="card-holder">
+    {% if national %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{national.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{national.category}}</h2>
+           
+            <p class="card-description">{{national.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' national.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if international %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{international.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{international.category}}</h2>
+           
+            <p class="card-description">{{international.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' international.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if political %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{political.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{political.category}}</h2>
+           
+            <p class="card-description">{{political.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' political.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if social %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{social.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{social.category}}</h2>
+           
+            <p class="card-description">{{social.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' social.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if health %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{health.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{health.category}}</h2>
+           
+            <p class="card-description">{{health.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' health.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if literature %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{literature.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{literature.category}}</h2>
+           
+            <p class="card-description">{{literature.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' literature.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if youth %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{national.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{youth.category}}</h2>
+           
+            <p class="card-description">{{youth.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' youth.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if art %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{art.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{art.category}}</h2>
+           
+            <p class="card-description">{{art.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' art.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if sports %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{sports.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{sports.category}}</h2>
+           
+            <p class="card-description">{{sports.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' sports.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if market %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{market.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{market.category}}</h2>
+           
+            <p class="card-description">{{market.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' market.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if housing %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{housing.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{housing.category}}</h2>
+           
+            <p class="card-description">{{housing.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' housing.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if jobs %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{jobs.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{jobs.category}}</h2>
+           
+            <p class="card-description">{{jobs.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' jobs.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if agriculture %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{agriculture.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{agriculture.category}}</h2>
+           
+            <p class="card-description">{{agriculture.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' agriculture.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if healthandeducation %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{healthandeducation.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{healthandeducation.category}}</h2>
+           
+            <p class="card-description">{{healthandeducation.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' healthandeducation.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if sportsandentertainment %}
+    <div class="card-container">
+        <div class="card-image">
+            <img src="/media/{{sportsandentertainment.img}}" srcset="">
+        </div>
+        <div class="card-content">
+            
+            <h2 class="card-title">{{sportsandentertainment.category}}</h2>
+           
+            <p class="card-description">{{sportsandentertainment.headding}}</p>
+        </div>
+        <div class="readmore">
+            <a href="{%url 'showcat' sportsandentertainment.category_id%}"><button>Read more &#8680;</button></a>
+        </div>
+    </div>
+    {% endif %}
+</div>   {% block footer %}
+{% endblock %}
+
+{% endblock %}
