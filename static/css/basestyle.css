@@ -149,10 +149,11 @@
    .readmore button{
     background-color: rgb(255, 102, 0);
     border-radius: 1rem;
-    width: 60%;
-    height: 2rem;
+    width:  calc(100% + 80px);
+    height:2rem;
     font-weight: 500;
     border: 1rem;
+   
    }
 
 

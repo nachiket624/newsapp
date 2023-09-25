@@ -1,10 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'readbase.html' %}
 {% load embed_video_tags %}
 {% load static %}
 {% block stylesheet%}
 <link rel="stylesheet" href="{% static 'css/readstyle.css' %}">
 
 {% endblock %}
+{% block title %}
+    {% for item in readdata %}
+    <title>Sp News {{item.headding}}</title>
+    <meta name="description" content="{{item.tag}}" />
+    <meta property="og:image" content="/media/{{item.img}}" />
+    <meta property="og:type" content="article" />
+{% endfor%}
+    {% endblock %}
+
 {% block content %}
 <div class="news-body">
     {% for item in readdata %}
@@ -32,6 +41,15 @@
         </p>
     </div>
 {%endfor%}
+</div>
+<div class="whatapp">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+{% for item in readdata %}
+<a href="whatsapp://send?text={{item.headding}}" class="float" data-action="share/whatsapp/share">
+<i class="fa fa-whatsapp my-float"></i>
+{%endfor%}
+
+</a>
 </div>
 
 {% block footer %}

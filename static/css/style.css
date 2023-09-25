@@ -2,7 +2,7 @@
 /* ! Heor section */
 .hero {
   margin-top: 1rem;
-  background-image:  url('/static/img/imh.jpg');
+  
   background-size: cover;
   background-position: center;
   height: 50vh;

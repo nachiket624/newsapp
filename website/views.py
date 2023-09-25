@@ -17,8 +17,24 @@ def index(request):
     get_disticut = category.objects.values_list('id').distinct()
     print(get_disticut)
     out = [item for t in get_disticut for item in t]
-    return render(request,'website/index.html',{'heorsection':herosection.objects.all().order_by('-date').first,'national':news.objects.filter(category_id=out[0]
-    ).order_by('-date').first(),'international':news.objects.filter(category_id=out[1]).order_by('-date').first(),'political':news.objects.filter(category_id=out[2]).order_by('-date').first(),'social':news.objects.filter(category_id=out[3]).order_by('-date').first(),'health':news.objects.filter(category_id=out[4]).order_by('-date').first(),'literature':news.objects.filter(category_id=out[5]).order_by('-date').first(),'youth':news.objects.filter(category_id=out[6]).order_by('-date').first(),'art':news.objects.filter(category_id=out[7]).order_by('-date').first(),'sports':news.objects.filter(category_id=out[9]).order_by('-date').first(),'market':news.objects.filter(category_id=out[10]).order_by('-date').first(),'housing':news.objects.filter(category_id=out[11]).order_by('-date').first(),'jobs':news.objects.filter(category_id=out[12]).order_by('-date').first(),'agriculture':news.objects.filter(category_id=out[13]).order_by('-date').first(),'healthandeducation':news.objects.filter(category_id=out[14]).order_by('-date').first(),'sportsandentertainment':news.objects.filter(category_id=out[14]).order_by('-date').first()})
+    return render(request,'website/index.html',{'heorsection':herosection.objects.all().order_by('-date').first,
+                                                'national':news.objects.filter(category_id=out[0]).order_by('-date').first(),
+                                                'international':news.objects.filter(category_id=out[1]).order_by('-date').first(),
+                                                'political':news.objects.filter(category_id=out[2]).order_by('-date').first(),
+                                                'social':news.objects.filter(category_id=out[3]).order_by('-date').first(),
+                                                'health':news.objects.filter(category_id=out[4]).order_by('-date').first(),
+                                                'literature':news.objects.filter(category_id=out[5]).order_by('-date').first(),
+                                                'youth':news.objects.filter(category_id=out[6]).order_by('-date').first(),
+                                                'art':news.objects.filter(category_id=out[7]).order_by('-date').first(),
+                                                'sports':news.objects.filter(category_id=out[9]).order_by('-date').first(),
+                                                'market':news.objects.filter(category_id=out[10]).order_by('-date').first(),
+                                                'housing':news.objects.filter(category_id=out[11]).order_by('-date').first(),
+                                                'jobs':news.objects.filter(category_id=out[12]).order_by('-date').first(),
+                                                'agriculture':news.objects.filter(category_id=out[13]).order_by('-date').first(),
+                                                'healthandeducation':news.objects.filter(category_id=out[14]).order_by('-date').first(),
+                                                'sportsandentertainment':news.objects.filter(category_id=out[14]).order_by('-date').first(),
+                                                'category_list_desktop':category.objects.all()[0:6],
+                                                 'category_list_mobile':category.objects.all()})
 
 def showcat(request,category):
     showcat = news.objects.select_related('category').filter(category=category)
@@ -32,7 +48,8 @@ def showcat(request,category):
     return render(request,'website/showcat.html',context)
 
 def read(request,id):
-    return render(request,'website/read.html',{'readdata':news.objects.filter(id=id)})
+    return render(request,'website/read.html',{'readdata':news.objects.filter(id=id), 'category_list_desktop':category.objects.all()[0:6],
+                                                 'category_list_mobile':category.objects.all()})
 
 
 def heroread(request,id):
