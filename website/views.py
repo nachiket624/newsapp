@@ -19,7 +19,6 @@ def CreateCategory():
 
 def index(request):
     get_disticut = category.objects.values_list('id').distinct()
-    print(get_disticut)
     out = [item for t in get_disticut for item in t]
     return render(request, 'website/index.html', {'heorsection': herosection.objects.all().order_by('-date').first,
                                                   'national': news.objects.filter(category_id=out[0]).order_by('-date').first(),
