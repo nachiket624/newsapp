@@ -21,12 +21,12 @@
         </a>
         <ul class="nav-menu">
             {% for item in category_list_desktop %}
-            <li class="nav-item nav-item-desktop"><span><u>{{item.category}}</u></span></li>
-           
+            <a class="nav-item-desktop" href="{%url 'showcat' item.id%}"> <li class="nav-item "><span><u>{{item.category}}</u></span></li></a>
+          
             {% endfor %}
 
             {% for item in category_list_mobile %}
-            <li class="nav-item nav-menu-mobile"><span><u>{{item.category}}</u></span></li>
+            <a class="nav-menu-mobile" href="{%url 'showcat' item.id%}"><li class="nav-item "><span><u>{{item.category}}</u></span></li></a>
            
             {% endfor %}
         </ul>
