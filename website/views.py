@@ -41,7 +41,7 @@ def index(request):
 
 
 def showcat(request, category):
-    showcat = news.objects.select_related('category').filter(category=category)
+    showcat = news.objects.select_related('category').filter(category=category).order_by('-date')
     page = Paginator(showcat, 12)
     page_list = request.GET.get('page')
     page = page.get_page(page_list)
