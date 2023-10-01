@@ -45,7 +45,7 @@
 <div class="whatapp">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% for item in readdata %}
-<a href="whatsapp://send?text={{item.headding}} {{  request.get_full_path }}" class="float" data-action="share/whatsapp/share">
+<a href="whatsapp://send?text={{item.headding}} {{siteurl}}{{  request.get_full_path }}" class="float" data-action="share/whatsapp/share">
 <i class="fa fa-whatsapp my-float"></i>
 {%endfor%}
 

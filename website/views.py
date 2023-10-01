@@ -3,7 +3,7 @@ from siteadmin.models import news, socialmedia, category, herosection
 from django.http import HttpResponse
 from django.core.paginator import Paginator
 from django.db.models import Subquery, OuterRef, F
-from django.db import connection
+from django.db import connections
 from django.template import *
 
 
@@ -54,7 +54,7 @@ def showcat(request, category):
 
 def read(request, id):
     return render(request, 'website/read.html', {'readdata': news.objects.filter(id=id), 'category_list_desktop': category.objects.all()[0:6],
-                                                 'category_list_mobile': category.objects.all()})
+                                                 'category_list_mobile': category.objects.all(),"siteurl":'www.spnewsmarathi.co.in'})
 
 
 def heroread(request, id):
